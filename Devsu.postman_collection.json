@@ -1,0 +1,264 @@
+{
+	"info": {
+		"_postman_id": "305cd1d2-7f99-48ee-8156-4c0b39d58485",
+		"name": "Devsu",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "5203359"
+	},
+	"item": [
+		{
+			"name": "http://localhost:8081/personas/1",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/personas/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"personas",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8081/personas",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"idPersona\": 0,\r\n  \"nombre\": \"Persona de Prueba2\",\r\n  \"genero\": \"F\",\r\n  \"edad\": 50,\r\n  \"identificacion\": \"ABD12345\",\r\n  \"direccion\": \"Ciudad\",\r\n  \"telefono\": \"12345674\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/personas",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"personas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8081/personas",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/personas",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"personas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8081/personas/2",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " {\r\n        \"idPersona\": 2,\r\n        \"nombre\": \"Ana Ruano\",\r\n        \"genero\": \"F\",\r\n        \"edad\": 34,\r\n        \"identificacion\": \"ABCD123\",\r\n        \"direccion\": \"Direccion de prueba\",\r\n        \"telefono\": \"12345678\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/personas/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"personas",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8082/movimientos/reporteMovimientosPdf?idCliente=AB0020&fechaInicio=2025-10-23&fechaFin=2025-10-24",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8082/movimientos/reporteMovimientosPdf?idCliente=AB0020&fechaInicio=2025-10-23&fechaFin=2025-10-24",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"movimientos",
+						"reporteMovimientosPdf"
+					],
+					"query": [
+						{
+							"key": "idCliente",
+							"value": "AB0020"
+						},
+						{
+							"key": "fechaInicio",
+							"value": "2025-10-23"
+						},
+						{
+							"key": "fechaFin",
+							"value": "2025-10-24"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8082/movimientos",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8082/movimientos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"movimientos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8082/cuentas",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"numeroCuenta\": \"AAFF031\",\r\n  \"tipoCuenta\": \"MONETARIA\",\r\n  \"saldoInicial\": 100,\r\n  \"saldoActual\": 100,\r\n  \"idCliente\": \"AB0020\",\r\n  \"estado\": \"1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8082/cuentas",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"cuentas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8082/cuentas/movimientos?numeroCuenta=AAFF031&tipoMovimiento=DEBITO&valor=10",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8082/cuentas/movimientos?numeroCuenta=AAFF031&tipoMovimiento=DEBITO&valor=10",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"cuentas",
+						"movimientos"
+					],
+					"query": [
+						{
+							"key": "numeroCuenta",
+							"value": "AAFF031"
+						},
+						{
+							"key": "tipoMovimiento",
+							"value": "DEBITO"
+						},
+						{
+							"key": "valor",
+							"value": "10"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8081/clientes",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/clientes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"clientes"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
