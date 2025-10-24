@@ -46,7 +46,7 @@ public class Cliente implements Serializable {
     @Column(name = "\"estado\"")
     private Character estado;
     @JoinColumn(name = "\"id_persona\"", referencedColumnName = "id_persona")
-    @ManyToOne(optional=false, fetch = FetchType.LAZY)
+    @ManyToOne(optional=false, fetch = FetchType.EAGER)
     private Persona idPersona;
 
     public Cliente() {
@@ -108,15 +108,7 @@ public class Cliente implements Serializable {
         return hash;
     }
 
-    @Override
-    public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Cliente)) {
-            return false;
-        }
-        Cliente other = (Cliente) object;
-        return !((this.identificador == null && other.identificador != null) || (this.identificador != null && !this.identificador.equals(other.identificador)));
-    }
+ 
 
     @Override
     public String toString() {

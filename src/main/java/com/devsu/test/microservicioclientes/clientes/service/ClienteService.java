@@ -29,14 +29,14 @@ public class ClienteService {
      *
      * @return {@code List<Cliente>}
      */
-   public List<Cliente> listar() {
+    public List<Cliente> listar() {
         return this.repo.findAll();
     }
 
     @Transactional
     public Cliente crear(Cliente pCliente) {
         Cliente creado;
-        
+
         if (this.repo.existsByIdCliente(pCliente.getIdCliente())) {
             throw new IllegalArgumentException("El cliente ya existe");
         } else {
@@ -70,8 +70,8 @@ public class ClienteService {
         repo.delete(creado);
 
     }
-    
-     public Integer getCorrelativo(){
+
+    public Integer getCorrelativo() {
         return repo.getCorrelativo();
     }
 

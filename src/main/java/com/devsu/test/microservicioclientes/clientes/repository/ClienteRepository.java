@@ -22,8 +22,11 @@ public interface ClienteRepository extends CrudRepository<Cliente, Long> {
 
     boolean existsByIdCliente(String idCliente);
     
-    @Override
-    List<Cliente> findAll();
+   
+    
+    @Query(value = "SELECT * FROM CLIENTE ", nativeQuery = true)
+    @Transactional(readOnly = true)
+    public List<Cliente> findAll();
     
     @Query(value="select CLIENTE_SQ.nextval from dual", nativeQuery=true)
     @Transactional(readOnly=true)
